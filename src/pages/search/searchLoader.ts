@@ -1,6 +1,11 @@
 import { searchPackages } from "../../api/query/searchPackages"
+import type { packageSummary } from "../../api/types/packageSummary"
 
-export async function searchLoader({request} :{request:Request} ){
+export interface SearchLoaderResult{
+    searchResults:packageSummary[]
+}
+
+export async function searchLoader({request} :{request:Request} ):Promise<SearchLoaderResult>{
     const {searchParams} = new URL(request.url)
     const term = searchParams.get('term')
     if (!term) {

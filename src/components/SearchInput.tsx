@@ -4,32 +4,40 @@ import { useNavigate } from 'react-router-dom';
 
 
 function SearchInput() {
-    const [term,setTerm] = useState('');
+    const [term, setTerm] = useState('');
     const navigate = useNavigate()
-    const handleSubmit=(event: React.FormEvent<HTMLFormElement>)=>{
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-            navigate(`/search?term=${term}`)
-    }   
-  return (
-    <form onSubmit={handleSubmit}>
-        <div className="relative">
-            <div className='absolute inset-y-0 flex items-center pl-3'>
-                <VscSearch className='h-5 w-5 text-gray-500'/>
-            </div>
-        <div className='flex'>
-        <input
+        navigate(`/search?term=${term}`)
+    }
+    return (
+        <form onSubmit={handleSubmit} className="w-full max-w-[700px]">
+        <div className="relative flex border border-black rounded-md overflow-hidden h-[42px]">
+      
+          {/* Search Icon */}
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <VscSearch className="h-5 w-5 text-gray-500" />
+          </div>
+      
+          {/* Input Field */}
+          <input
             value={term}
-            onChange={(e)=>setTerm(e.target.value)}
-            className='pl-10 py-2 min-w-3xl border-0 shadow-none bg-gray-200'
-            placeholder='Search Package'
-        />
-        <button className='bg-black-900 w-xl h-full border-1 p-4'>
+            onChange={(e) => setTerm(e.target.value)}
+            placeholder="Search packages"
+            className="pl-10 pr-4 w-full text-sm outline-none bg-white"
+          />
+      
+          {/* Search Button */}
+          <button
+            type="submit"
+            className="bg-black text-white px-6 text-sm font-semibold hover:bg-gray-900 cursor-pointer"
+          >
             Search
-            </button>
+          </button>
         </div>
-        </div>
-    </form>
-  )
+      </form>
+      
+    )
 }
 
 export default SearchInput

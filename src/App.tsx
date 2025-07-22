@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./pages/Root"
 import HomePage from "./pages/HomePage"
-import SearchPage from "./pages/SearchPage"
+import SearchPage from "./pages/search/SearchPage"
 import DetailPage from "./pages/DetailPage"
+import { searchLoader } from "./pages/search/searchLoader"
 function App() {
   const router = createBrowserRouter([
     {
@@ -15,7 +16,8 @@ function App() {
         },
         {
           path: '/search',
-          element: <SearchPage />
+          element: <SearchPage />,
+          loader:searchLoader
         },
         {
           path: '/packages/:name',

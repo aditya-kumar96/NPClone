@@ -12,6 +12,9 @@ function SearchPage() {
     <PackageListItem pack={result} />
     )
   })
+
+ //i will add UI and variables same like NPM
+
   return (
     <div>
 

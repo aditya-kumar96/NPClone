@@ -6,7 +6,7 @@ import PackageListItem from "../../components/PackageListItem"
 
 function SearchPage() {
   const { searchResults } = useLoaderData() as SearchLoaderResult
-  console.log(searchResults?.length)
+  console.log(searchResults)
   const renderedResults = searchResults.map((result) => {
     return(
     <PackageListItem pack={result} />

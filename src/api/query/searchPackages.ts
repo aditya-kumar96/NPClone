@@ -2,11 +2,16 @@ import type { packageSummary } from "../types/packageSummary";
 
 interface SearchResponse {
     objects: {
+        dependents:string,
         package: {
             name: string,
             description: string,
             version: string,
-            keywords?: string[]
+            license:string,
+            keywords?: string[],
+            publisher:{
+                username:string,
+            }
         }
     }[]
 }
@@ -15,13 +20,16 @@ export async function searchPackages(term: string): Promise<packageSummary[]> {
         `https://registry.npmjs.org/-/v1/search?text=${term}`
     )
     const data: SearchResponse = await res.json()
-    
-    return data.objects.map(({ package: { name, description, version, keywords } }) => {
+    console.log(data)
+    return data.objects.map(({dependents ,package: { name, description, version, keywords , license , publisher:{username} } }) => {
         return {
+            dependents,
             name,
             description,
             version,
-            keywords
+            keywords,
+            license,
+            username
         }
     })
 }

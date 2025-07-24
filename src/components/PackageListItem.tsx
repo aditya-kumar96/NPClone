@@ -23,6 +23,10 @@ export default function PackageListItem({pack}:PackageListItemProps){
                     <div className="flex gap-1 flex-wrap">
                         {renderedKeywords}
                     </div>
+                    <div className="flex gap-1 flex-wrap">
+                        {pack.username}
+                    </div>
+                    
             </div>
             <div className="sm:ml-6 mt-4 sm:mt-0">
                 <Link to={`/packages/${pack.name}`} className="py-2 px-3 rounded bg-black text-white text-sm sm:text-base whitespace-nowrap">

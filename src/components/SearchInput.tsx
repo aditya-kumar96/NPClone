@@ -12,7 +12,7 @@ function SearchInput() {
     }
     return (
         <form onSubmit={handleSubmit} className="w-full max-w-[700px]">
-        <div className="relative flex border border-black rounded-md overflow-hidden h-[42px]">
+        <div className="relative flex  overflow-hidden h-[50px]">
       
           {/* Search Icon */}
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -24,7 +24,7 @@ function SearchInput() {
             value={term}
             onChange={(e) => setTerm(e.target.value)}
             placeholder="Search packages"
-            className="pl-10 pr-4 w-full text-sm outline-none bg-white"
+            className="pl-10 pr-4 w-full text-sm outline-none bg-gray-200"
           />
       
           {/* Search Button */}

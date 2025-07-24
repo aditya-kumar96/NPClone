@@ -4,11 +4,11 @@ import logo from '../assets/icons/logo.svg'
 
 function Header() {
     return (
-        <div className="flex flex-wrap items-center justify-between gap-4 px-4 py-2 border-b border-gray-300 h-auto sm:h-16">
+        <div className="flex flex-wrap items-center justify-between gap-4 px-4 py-1 border-b border-gray-300 h-auto sm:h-18">
         {/* Left: Logo */}
-        <div className="flex items-center space-x-3 flex-shrink-0">
+        <div className="flex items-center space-x-3 ml-5 flex-shrink-0">
             <Link to="/" className="text-lg font-bold">
-                <img src={logo} alt="Logo" style={{ width: '60px', height: 'auto' }} />
+                <img src={logo} alt="Logo" style={{ width: '70px', height: '22px' }} />
             </Link>
         </div>
 

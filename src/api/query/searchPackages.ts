@@ -25,7 +25,6 @@ export async function searchPackages(term: string): Promise<packageSummary[]> {
         `https://registry.npmjs.org/-/v1/search?text=${term}`
     )
     const data: SearchResponse = await res.json()
-    console.log('jkdl ',data)
     return data.objects.map(({dependents ,downloads:{monthly} ,package: { name, description, version, keywords , license , publisher:{username} } }) => {
         return {
             dependents,

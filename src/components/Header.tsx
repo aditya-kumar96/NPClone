@@ -4,7 +4,7 @@ import logo from '../assets/icons/logo.svg'
 
 function Header() {
     return (
-        <div className="flex flex-wrap items-center justify-between gap-4 px-4 py-2 border-b h-auto sm:h-16">
+        <div className="flex flex-wrap items-center justify-between gap-4 px-4 py-2 border-b border-gray-300 h-auto sm:h-16">
         {/* Left: Logo */}
         <div className="flex items-center space-x-3 flex-shrink-0">
             <Link to="/" className="text-lg font-bold">

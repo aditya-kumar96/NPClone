@@ -6,4 +6,6 @@ export interface packageSummary{
     keywords?:string[],
     license:string,
     username:string,
+    monthly:number
+    
 }

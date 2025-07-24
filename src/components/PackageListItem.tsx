@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { packageSummary } from "../api/types/packageSummary";
-
+import dependent from '../assets/icons/dependent.svg'
+import law from '../assets/icons/law.svg'
 interface PackageListItemProps{
     pack:packageSummary
 }
@@ -24,7 +25,19 @@ export default function PackageListItem({pack}:PackageListItemProps){
                         {renderedKeywords}
                     </div>
                     <div className="flex gap-1 flex-wrap">
+                        <span>
                         {pack.username}
+                        </span>
+                          •
+                          <span className="flex gap-1 flex-wrap ">
+                          {pack.version}
+                          •
+                        <img src={dependent}  alt="dependent" />
+                            {pack.dependents} dependents
+                            •
+                        <img src={law} alt="license" className="w-5 h-5"/>
+                            {pack.license}
+                        </span>
                     </div>
                     
             </div>

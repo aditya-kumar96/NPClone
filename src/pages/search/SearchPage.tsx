@@ -23,10 +23,7 @@ function SearchPage() {
         {searchResults?.length}+ package{searchResults?.length !== 1 ? "s" : ""} found
         </p>
       </div>
-
         <div className="border-b "/>
-
-
       <div className="m-1">
       {renderedResults}
       </div>

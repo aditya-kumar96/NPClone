@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { packageSummary } from "../api/types/packageSummary";
 import dependent from '../assets/icons/dependent.svg'
+import avatar2 from '../assets/images/avatar2.png';
 import law from '../assets/icons/law.svg'
 import downloads from '../assets/icons/downloads.svg'
 interface PackageListItemProps {
@@ -14,7 +15,9 @@ export default function PackageListItem({ pack }: PackageListItemProps) {
             {keyword}
         </div>
     })
+    
     return (
+        
         <div className="border-b-1 border-gray-300 w-[90%] mx-auto  p-4  flex flex-col sm:flex-row justify-between gap-x-4 gap-y-2 m-2 ">
             <div className="flex flex-col gap-2 flex-1">
                 <Link to={`/packages/${pack.name}`} className="text-xl font-medium break-words ">
@@ -27,6 +30,7 @@ export default function PackageListItem({ pack }: PackageListItemProps) {
                     {renderedKeywords}
                 </div>
                 <div className="flex flex-wrap items-center gap-2 text-sm text-gray-700">
+                <img src={avatar2} alt="dependents" className="w-4 h-4 " />
                     <span className="text-black">{pack.username}</span>
                     <span>•</span>
 
@@ -35,7 +39,7 @@ export default function PackageListItem({ pack }: PackageListItemProps) {
                         <span>•</span>
 
                         <img src={dependent} alt="dependents" className="w-4 h-4 " />
-                        <span>{pack.dependents} dependents</span>
+                        <span>{Number(pack.dependents).toLocaleString('en-IN') } dependents</span>
                         <span>•</span>
 
                         <img src={law} alt="license" className="w-4 h-4" />

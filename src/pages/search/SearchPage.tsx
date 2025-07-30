@@ -15,7 +15,6 @@ function SearchPage() {
     )
   })
 
-  console.log('navigation state',navigation)
   if (navigation.state === 'loading') {
     return <Loader/>
   }

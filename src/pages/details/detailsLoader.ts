@@ -14,10 +14,7 @@ export async function detailsLoader({params}:loadArgs):Promise<DetailsLoaderResu
     if(!name){
         throw new Error("Name must be provided")
     }
-
     const details = await getPackage(name)
-
-
     return {
         details
     }

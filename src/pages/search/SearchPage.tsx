@@ -1,11 +1,13 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigation } from "react-router-dom"
 
 import type { SearchLoaderResult } from "./searchLoader"
 import PackageListItem from "../../components/PackageListItem"
+import Loader from "../../components/Loader"
 
 
 function SearchPage() {
   const { searchResults } = useLoaderData() as SearchLoaderResult
+  const navigation  = useNavigation()
   
   const renderedResults = searchResults.map((result) => {
     return(
@@ -13,8 +15,13 @@ function SearchPage() {
     )
   })
 
+  console.log('navigation state',navigation)
+  if (navigation.state === 'loading') {
+    return <Loader/>
+  }
   return (
-    <div>
+    <div >
+      
       <div className="px-4 py-3 w-[90%] mx-auto" >
         <p className="text-lg sm:text-lg font-medium text-black">
         {searchResults?.length}+ package{searchResults?.length !== 1 ? "s" : ""} found
